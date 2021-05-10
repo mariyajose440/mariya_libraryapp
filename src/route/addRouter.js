@@ -1,6 +1,9 @@
 const express=require("express");
 const addRouter =express.Router();
 var bodyParser = require('body-parser');
+const bookdata=require('../model/bookdata');
+const authdata=require('../model/authdata');
+const { urlencoded } = require("express");
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 function add(nav)
@@ -28,7 +31,9 @@ function add(nav)
             img:ab.img};
         
         console.log(ab);
-        res.render("book012",{nav,title:"LIBRARY",books});
+        var data=bookdata(books);
+        data.save();
+        res.redirect("/books");
 
     });
     addRouter.post('/addauthor',urlencodedParser,function(req,res)
@@ -41,7 +46,9 @@ function add(nav)
             img:ab.img};
         
         console.log(ab);
-        res.render("author012",{nav,title:"LIBRARY",ar});
+        var data=authdata(ar);
+        data.save();
+        res.redirect('/authors');
 
     });
     return addRouter;

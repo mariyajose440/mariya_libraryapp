@@ -16,6 +16,7 @@ app.use(express.static('./public'));
 app.use('/books',bookRouter);
 app.use('/authors',authorRouter);
 app.use("/add",addRouter);
+app.use(express.urlencoded({extended:true}));
 
 var nav1=[
     {link:'/signup' , name:'SIGN_UP'},
