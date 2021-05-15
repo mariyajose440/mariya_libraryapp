@@ -6,12 +6,12 @@
 		<title><%=title%></title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link href="///netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
+		<link href="/css/styles.css" rel="stylesheet">
 	</head>
 	<body>
 <header class="navbar navbar-bright navbar-fixed-top" role="banner">
@@ -49,7 +49,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <h1>BOOKS
+        <h1>ADD NEW BOOK
           <p class="lead"></p>
         </h1>
       </div>
@@ -88,35 +88,37 @@
           
           
           <!--/stories-->
-          <%for(i=0;i<book.length;i++){%>
-          <div class="row">    
-            <br>
-            <div class="col-md-2 col-sm-3 text-center">
-              <a class="story-title" href="#"><img alt="" src="/imges/<%=book[i].img%>" style="width:100px;height:100px" class="img-circle"></a>
-            </div>
-            <div class="col-md-10 col-sm-9">
-              <h3><%=book[i].title%></h3>
-              <div class="row">
-                <div class="col-xs-9">
-                  <h4><span class="label label-default"><%=book[i].author%></span></h4><h4>
-                  <small style="font-family:courier,'new courier' ; font-size: 20px;" class="text-muted">
-                    <b><%=book[i].gen%></b>&nbsp;&nbsp;<b>
-                      <a style="color: mediumblue;" href="/books/<%=book[i]._id%>" class="text-muted" style="color: midnightblue;">Read_More</a>
-                      <a style="padding-right: 20px; padding-left: 20px; color: mediumblue;"  href="/add/update/<%=book[i]._id%>" class="text-muted" style="color: midnightblue;">Update</a>
-                      <a style="color: mediumblue;" href="/add/delete/<%=book[i]._id%>" class="text-muted" style="color: midnightblue;">Delete</a></b></small>
-                  </h4></div>
-                <div class="col-xs-3"></div>
-              </div>
-              <br><br>
-            </div>
-          </div>
-          <hr>
-          <%}%>
+          
+          <center>
+            <br><br><br>
+            <h1 style="color: midnightblue; ">WELCOME TO THE LIBRARY</h1>
+        </center>
+            <!-- <h2>Already a member ?  <a href="/login" style="color: mediumblue;">login</a></h2><br> -->
+            <form action="/add/Update/<%=books._id%>" method="POST" ><br><br><br>
+            <label for="" style="   color: midnightblue;  font-family: 'Brush Script MT', cursive; font-size: 25px; padding-left: 300px; " >BOOK NAME :  </label>
+            <input type="text" id="title" name="title" style="margin-left: 10px; width:375px;" value="<%=books.title%>" required><br><br><br>
+            <label for="" style=" color: midnightblue; font-family: 'Brush Script MT', cursive; font-size: 25px; padding-left: 275px; " >BOOK AUTHOR :  </label>
+            <input type="text" id="author" name="author" style="margin-left: 10px; width:375px;"value="<%=books.author%>" required><br><br><br>
+            <label for="" style=" color: midnightblue;  font-family: 'Brush Script MT', cursive; font-size: 25px; padding-left: 360px; " >GENRE :  </label>
+            <input type="text" id="gen" name="gen" style="margin-left: 10px; width:375px;"  value=" <%=books.gen%>" required><br><br><br>
+            <label for="" style=" color: midnightblue;  font-family: 'Brush Script MT', cursive; font-size: 25px; padding-left: 200px;" >BOOK DISCRIPTION :  &nbsp;</label>
+           <textarea name="dis" id="dis" cols="50" rows="5"  required> <%=books.dis%> </textarea><br><br><br>
+            <label for="" style=" color: midnightblue;  font-family: 'Brush Script MT', cursive; font-size: 20px; padding-left: 370px;">IMAGE :   
+                 <input type="file" id="img" name="img" style="padding-left: 100px; margin-top: -30px;" ><br><br><br>
+            </label>
+            <img style="height: 100px; width: 250px; padding-right: 70px; " src="/imges/<%=books.img%>">
+            <br><br><br><br>
+            <center>
+                <input type="submit" value="UP_DATE" style=" color: midnightblue; font-family: 'Brush Script MT', cursive; width: 175px; font-size: 25px;">
+            </center>
+            
+            </form>
+            <br><br><br><br><br>
+          
+          <!--/stories-->
           
           
           
-          <!-- <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a> -->
-        
           
         </div>
       </div>
@@ -168,7 +170,7 @@
   </div>
 </footer>
 	<!-- script references -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+		<script src="///ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
 	</body>
 </html>

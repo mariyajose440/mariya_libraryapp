@@ -87,11 +87,11 @@
             <br><br><br>
             <h1>WELCOME TO THE LIBRARY</h1>
             <h2>login here</h2><br>
-            <form action="/index" onsubmit="return submit1();">
+            <form action="/login" method="POST" onsubmit="return submit1();">
               <label for="" style="margin-left: -25%; font-family: 'Brush Script MT', cursive; font-size: 25px; " >USERNAME :</label><br>
-            <input type="text" id="email" placeholder="enter your email"  onkeyup="validemail()" required><br><br><br>
+            <input type="text" id="email" name="email" placeholder="enter your email"  onkeyup="validemail()" required><br><br><br>
             <label for="" style="margin-left: -25%; font-family: 'Brush Script MT', cursive; font-size: 20px; ">PASSWORD :</label><br>
-            <input type="password" id="password" onkeyup="validpass()" required><br><br><br>
+            <input type="password" name="password" id="password" onkeyup="validpass()" required><br><br><br>
             <input type="submit" value="LOGIN" style="font-family: 'Brush Script MT', cursive; width: 100px; font-size: 25px;">
             <a href="/signup" style="color: mediumblue;"><h3>create a new account</h3></a>
             <script>

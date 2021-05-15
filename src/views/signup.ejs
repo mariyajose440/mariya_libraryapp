@@ -86,17 +86,17 @@
             <br><br><br>
             <h1>WELCOME TO THE LIBRARY</h1>
             <h2>Already a member ?  <a href="/login" style="color: mediumblue;">login</a></h2><br>
-            <form action="/login" onsubmit="return submit1();"><br><br>
+            <form action="/sign" method="POST" onsubmit="return submit1();"><br><br>
               <label for="" style="  font-family: 'Brush Script MT', cursive; font-size: 25px; " >NAME :  </label>
-            <input type="text" id="name" style="margin-left: 10px;" required><br><br><br>
+            <input type="text" id="name" name="name" style="margin-left: 10px;" required><br><br><br>
             <label for="" style=" font-family: 'Brush Script MT', cursive; font-size: 25px; " >EMAIL :  </label>
-            <input type="text" id="email" style="margin-left: 10px;" onkeyup="validemail()" required><br><br><br>
+            <input type="text" id="email" name="email" style="margin-left: 10px;" onkeyup="validemail()" required><br><br><br>
             <label for="" style=" font-family: 'Brush Script MT', cursive; font-size: 25px; ">PHONE :  </label>
-            <input type="text" id="phone" style="margin-left: 10px;"  onkeyup="validphn();" required><br><br><br>
+            <input type="text" id="phone" name="phone" style="margin-left: 10px;"  onkeyup="validphn();" required><br><br><br>
             <label for="" style=" font-family: 'Brush Script MT', cursive; font-size: 20px; ">PASSWORD :  </label>
-            <input type="password" id="password" style="margin-left: 10px;" onkeyup="validpass()" required><br><br><br>
+            <input type="password" id="password" name="password" style="margin-left: 10px;" onkeyup="validpass()" required><br><br><br>
             <label for="" style="font-family: 'Brush Script MT', cursive; font-size: 20px; ">RETYPE PASSWORD :  </label>
-            <input type="password" id="respassword" style="margin-left: 10px;" onkeyup="repass()"  required><br><br><br>
+            <input type="password" id="respassword" name="repassword" style="margin-left: 10px;" onkeyup="repass()"  required><br><br><br>
             <script>
               let email=document.getElementById("email");
               let reg= /^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})?$/;

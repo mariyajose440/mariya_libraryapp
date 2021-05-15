@@ -10,6 +10,7 @@ function auth(nav)
     // ];
     authorRouter.get('/',function(erq,res)
     {
+        
         authdata.find()
         .then(function(author){
             res.render("authors",{nav,title:"LIBRARY",author});

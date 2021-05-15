@@ -23,12 +23,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="/index" class="navbar-brand">Home</a>
+      <a href="/" class="navbar-brand">Home</a>
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
-        <%for(i=0;i<nav.length;i++){%>
-          <li><a href="<%=nav[i].link%>"><%=nav[i].name%></a></li>
+        <%for(i=0;i<nav1.length;i++){%>
+          <li><a href="<%=nav1[i].link%>"><%=nav1[i].name%></a></li>
           <%}%>
       </ul>
       <ul class="nav navbar-right navbar-nav">
@@ -49,7 +49,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <h1>BOOKS
+        <h1>LIBRARY
           <p class="lead"></p>
         </h1>
       </div>
@@ -58,7 +58,6 @@
           <div class="row">
             <div class="col-sm-12">
               
-			
             </div>
           </div>
         </div>
@@ -84,39 +83,9 @@
       
       <div class="panel">
         <div class="panel-body">
-          
-          
-          
-          <!--/stories-->
-          <%for(i=0;i<book.length;i++){%>
-          <div class="row">    
-            <br>
-            <div class="col-md-2 col-sm-3 text-center">
-              <a class="story-title" href="#"><img alt="" src="/imges/<%=book[i].img%>" style="width:100px;height:100px" class="img-circle"></a>
-            </div>
-            <div class="col-md-10 col-sm-9">
-              <h3><%=book[i].title%></h3>
-              <div class="row">
-                <div class="col-xs-9">
-                  <h4><span class="label label-default"><%=book[i].author%></span></h4><h4>
-                  <small style="font-family:courier,'new courier' ; font-size: 20px;" class="text-muted">
-                    <b><%=book[i].gen%></b>&nbsp;&nbsp;<b>
-                      <a style="color: mediumblue;" href="/books/<%=book[i]._id%>" class="text-muted" style="color: midnightblue;">Read_More</a>
-                      <a style="padding-right: 20px; padding-left: 20px; color: mediumblue;"  href="/add/update/<%=book[i]._id%>" class="text-muted" style="color: midnightblue;">Update</a>
-                      <a style="color: mediumblue;" href="/add/delete/<%=book[i]._id%>" class="text-muted" style="color: midnightblue;">Delete</a></b></small>
-                  </h4></div>
-                <div class="col-xs-3"></div>
-              </div>
-              <br><br>
-            </div>
-          </div>
-          <hr>
-          <%}%>
-          
-          
-          
-          <!-- <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a> -->
-        
+            <!-- <img src="https://www.nysenate.gov/sites/default/files/library_books.jpg" alt="" style="height: 500px; width: 1000px;"> -->
+            <center><h1 style="font-size: 60px;">This username or password is incorrect.<br>Enter valid username and password.<br><h1 style="font-size: 80px;">Try Again</h1></h1></center>
+          <br><br>
           
         </div>
       </div>

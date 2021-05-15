@@ -51,6 +51,72 @@ function add(nav)
         res.redirect('/authors');
 
     });
+    addRouter.get('/update/:id',function(req,res)
+    {
+        var id=req.params.id;
+        bookdata.findOne({_id:id})
+        .then(function (books){
+            res.render("update",{nav,title:"LIBRARY",books});
+        })
+    });
+    addRouter.post('/update/:id',urlencodedParser,function(req,res)
+    {
+        var ab=req.body;
+        ar=
+            {title:ab.title,
+            auth:ab.auth,
+            gen:ab.gen,
+            dis:ab.dis,
+            img:ab.img};
+            var id=req.params.id;
+            console.log(id);
+            bookdata.updateOne({_id:id},ar)
+            // bookdata.findOne({_id:id})
+            .then(function(){
+                res.redirect('/books');
+            })
+
+    });
+    addRouter.get('/delete/:id',function(req,res)
+    {
+        var id=req.params.id;
+        bookdata.deleteOne({_id:id})
+        .then(function(){
+        res.redirect('/books');
+        })
+    });
+    addRouter.get('/updates/:id',function(req,res)
+    {
+        var id=req.params.id;
+        authdata.findOne({_id:id})
+        .then(function (auth){
+            res.render("updates",{nav,title:"LIBRARY",auth});
+        })
+    });
+    addRouter.post('/updates/:id',urlencodedParser,function(req,res)
+    {
+        var ab=req.body;
+        ar=
+            {title:ab.title,
+            gen:ab.gen,
+            dis:ab.dis,
+            img:ab.img};
+            var id=req.params.id;
+            console.log(id);
+            authdata.updateOne({_id:id},ar)
+            .then(function(){
+                res.redirect('/authors');
+            })
+
+    });
+    addRouter.get('/deletes/:id',function(req,res)
+    {
+        var id=req.params.id;
+        authdata.deleteOne({_id:id})
+        .then(function(){
+        res.redirect('/authors');
+        })
+    });
     return addRouter;
     
     
